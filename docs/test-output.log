@@ -1,0 +1,57 @@
+
+> puebas-unitarias@1.0.0 test
+> jest --runInBand
+
+PASS __tests__/triangleClassifier.test.js
+  Clases de equivalencia - casos validos
+    ✓ Equilatero (1 ms)
+    ✓ Isosceles (permutaciones) - (8, 8, 5)
+    ✓ Isosceles (permutaciones) - (8, 5, 8)
+    ✓ Isosceles (permutaciones) - (5, 8, 8)
+    ✓ Escaleno
+  Clases de equivalencia - casos invalidos
+    ✓ Triangulo imposible (7 ms)
+    ✓ Uno o mas lados en 0 - (0, 4, 4)
+    ✓ Uno o mas lados en 0 - (4, 0, 4)
+    ✓ Uno o mas lados en 0 - (4, 4, 0) (1 ms)
+    ✓ Lados negativos - (-1, 4, 4)
+    ✓ Lados negativos - (4, -1, 4) (1 ms)
+    ✓ Lados negativos - (4, 4, -1)
+    ✓ Lados flotantes - (4.5, 4, 4) (1 ms)
+    ✓ Lados flotantes - (4, 4.5, 4)
+    ✓ Lados flotantes - (4, 4, 4.5)
+    ✓ Numero incorrecto de parametros
+    ✓ Numero incorrecto de parametros (1 ms)
+  Condiciones de borde
+    ✓ 1) Isosceles casi equilatero - (100, 100, 99)
+    ✓ 1) Isosceles casi equilatero - (100, 99, 100)
+    ✓ 1) Isosceles casi equilatero - (99, 100, 100) (1 ms)
+    ✓ 2) Escaleno casi isosceles/equilatero - (101, 100, 99)
+    ✓ 2) Escaleno casi isosceles/equilatero - (100, 99, 98)
+    ✓ 3) Triangulos muy pequenos - (1, 1, 1)
+    ✓ 3) Triangulos muy pequenos - (2, 2, 3) (1 ms)
+    ✓ 3) Triangulos muy pequenos - (2, 3, 4)
+    ✓ 4) Triangulos muy grandes - (1000000, 1000000, 1000000)
+    ✓ 4) Triangulos muy grandes - (1000000, 1000000, 999999)
+    ✓ 4) Triangulos muy grandes - (1000000, 999999, 999998)
+    ✓ 5) Lados muy largo y muy corto (todas las posiciones) - (1, 1000000, 1000000)
+    ✓ 5) Lados muy largo y muy corto (todas las posiciones) - (1000000, 1, 1000000) (1 ms)
+    ✓ 5) Lados muy largo y muy corto (todas las posiciones) - (1000000, 1000000, 1)
+    ✓ 6) Lado fuera de rango - (1000001, 1000000, 1000000)
+    ✓ 6) Lado fuera de rango - (1000000, 1000001, 1000000) (1 ms)
+    ✓ 6) Lado fuera de rango - (1000000, 1000000, 1000001)
+    ✓ 7) Un lado igual a la suma de los otros dos - (10, 4, 6) (1 ms)
+    ✓ 7) Un lado igual a la suma de los otros dos - (4, 10, 6)
+    ✓ 7) Un lado igual a la suma de los otros dos - (4, 6, 10) (1 ms)
+    ✓ 8) Un lado apenas menor a la suma de los otros dos - (9, 4, 6)
+    ✓ 8) Un lado apenas menor a la suma de los otros dos - (4, 9, 6)
+    ✓ 8) Un lado apenas menor a la suma de los otros dos - (4, 6, 9)
+    ✓ 9) Un lado apenas mayor a la suma de los otros dos - (11, 4, 6) (1 ms)
+    ✓ 9) Un lado apenas mayor a la suma de los otros dos - (4, 11, 6)
+    ✓ 9) Un lado apenas mayor a la suma de los otros dos - (4, 6, 11)
+
+Test Suites: 1 passed, 1 total
+Tests:       43 passed, 43 total
+Snapshots:   0 total
+Time:        0.145 s, estimated 1 s
+Ran all test suites.

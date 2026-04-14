@@ -1,0 +1,18 @@
+
+> puebas-unitarias@1.0.0 test:coverage
+> jest --coverage --runInBand
+
+PASS __tests__/triangleClassifier.test.js
+PASS __tests__/cliInput.test.js
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |     100 |      100 |     100 |     100 |                   
+ triangleClassifier.js |     100 |      100 |     100 |     100 |                   
+-----------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       47 passed, 47 total
+Snapshots:   0 total
+Time:        0.109 s, estimated 1 s
+Ran all test suites.
