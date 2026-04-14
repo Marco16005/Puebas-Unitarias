@@ -6,6 +6,7 @@ const {
   outOfRangeMessage,
 } = require("../src/triangleClassifier");
 
+// Equivalence classes: one representative per valid family of triangles.
 describe("Clases de equivalencia - casos validos", () => {
   test("Equilatero", () => {
     // Arrange
@@ -25,6 +26,7 @@ describe("Clases de equivalencia - casos validos", () => {
     [8, 5, 8],
     [5, 8, 8],
   ])("Isosceles (permutaciones) - (%i, %i, %i)", (a, b, c) => {
+    // The type must remain Isosceles regardless of side order.
     // Arrange
     const expected = TRIANGLE_TYPES.ISOSCELES;
 
@@ -49,6 +51,7 @@ describe("Clases de equivalencia - casos validos", () => {
   });
 });
 
+// Invalid equivalence classes: each one should fail with a specific message.
 describe("Clases de equivalencia - casos invalidos", () => {
   test("Triangulo imposible", () => {
     // Arrange
@@ -98,14 +101,12 @@ describe("Clases de equivalencia - casos invalidos", () => {
     () => classifyTriangle(4, 4),
     () => classifyTriangle(4, 4, 4, 4),
   ])("Numero incorrecto de parametros", (act) => {
-    // Arrange
-    const action = act;
-
     // Act + Assert
-    expect(action).toThrow(ERROR_MESSAGES.EXACTLY_THREE_PARAMETERS);
+    expect(act).toThrow(ERROR_MESSAGES.EXACTLY_THREE_PARAMETERS);
   });
 });
 
+// Boundary analysis around limits: side magnitude and triangle inequality thresholds.
 describe("Condiciones de borde", () => {
   test.each([
     [100, 100, 99],
@@ -198,6 +199,7 @@ describe("Condiciones de borde", () => {
     [4, 10, 6],
     [4, 6, 10],
   ])("7) Un lado igual a la suma de los otros dos - (%i, %i, %i)", (a, b, c) => {
+    // Equality is not enough; strict inequality is required.
     // Arrange
     const act = () => classifyTriangle(a, b, c);
 
@@ -210,6 +212,7 @@ describe("Condiciones de borde", () => {
     [4, 9, 6],
     [4, 6, 9],
   ])("8) Un lado apenas menor a la suma de los otros dos - (%i, %i, %i)", (a, b, c) => {
+    // Just below the threshold should still be a valid triangle.
     // Arrange
     const expected = TRIANGLE_TYPES.ESCALENO;
 
@@ -225,6 +228,7 @@ describe("Condiciones de borde", () => {
     [4, 11, 6],
     [4, 6, 11],
   ])("9) Un lado apenas mayor a la suma de los otros dos - (%i, %i, %i)", (a, b, c) => {
+    // Just above the threshold must be rejected.
     // Arrange
     const act = () => classifyTriangle(a, b, c);
 
